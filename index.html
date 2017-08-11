@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+
+<html>
+
+<head>
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="node_modules/font-awesome/css/font-awesome.css" rel="stylesheet" />
+
+    <!-- Menu CSS -->
+    <link href="css/sidebar-nav.css" rel="stylesheet">
+    <!-- animation CSS -->
+    <link href="css/animate.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet" />
+    <!-- color CSS -->
+    <link href="css/blue-dark.css" id="theme" rel="stylesheet" />
+
+    <style>
+        .white-box {
+            min-height: 150px;
+            max-height: 150px;
+        }
+    </style>
+    <style>
+        /* Router transition */
+
+        .fade-enter-active,
+        .fade-leave-active {
+            transition-property: opacity;
+            transition-duration: .25s;
+        }
+
+        .fade-enter-active {
+            transition-delay: .25s;
+        }
+
+        .fade-enter,
+        .fade-leave-active {
+            opacity: 0
+        }
+    </style>
+</head>
+
+
+<body>
+    <div id="wrapper">
+        <!-- Left navbar-header -->
+        <div class="navbar-default sidebar" role="navigation">
+            <div class="sidebar-nav navbar-collapse slimscrollsidebar">
+                <ul class="nav" id="side-menu">
+                    <li style="padding: 10px 0 0;">
+                        <a href="index.html" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i><span class="hide-menu">Dashboard</span></a>
+                    </li>
+                    <li>
+                        <a href="profile.html" class="waves-effect"><i class="fa fa-user fa-fw" aria-hidden="true"></i><span class="hide-menu">Profile</span></a>
+                    </li>
+                    <li>
+                        <a href="basic-table.html" class="waves-effect"><i class="fa fa-table fa-fw" aria-hidden="true"></i><span class="hide-menu">Basic Table</span></a>
+                    </li>
+                    <li>
+                        <a href="fontawesome.html" class="waves-effect"><i class="fa fa-font fa-fw" aria-hidden="true"></i><span class="hide-menu">Icons</span></a>
+                    </li>
+                    <li>
+                        <a href="map-google.html" class="waves-effect"><i class="fa fa-globe fa-fw" aria-hidden="true"></i><span class="hide-menu">Google Map</span></a>
+                    </li>
+                    <li>
+                        <a href="blank.html" class="waves-effect"><i class="fa fa-columns fa-fw" aria-hidden="true"></i><span class="hide-menu">Blank Page</span></a>
+                    </li>
+                    <li>
+                        <a href="404.html" class="waves-effect"><i class="fa fa-info-circle fa-fw" aria-hidden="true"></i><span class="hide-menu">Error 404</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Left navbar-header end -->
+
+        <!-- Page Content -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row bg-title">
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                        <h4 class="page-title">Vue Dashboard</h4>
+                    </div>
+                    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12"> <a href="http://wrappixel.com/templates/pixeladmin/" target="_blank" class="btn btn-danger pull-right m-l-20 btn-rounded btn-outline hidden-xs hidden-sm waves-effect waves-light">Garrett</a>
+                        <ol class="breadcrumb">
+                            <li><a href="#">Dashboard</a></li>
+                        </ol>
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+                <!-- row -->
+                <div class="row">
+                    <!-- example block -->
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <div class="white-box">
+                            <h4 class="text-muted vb">Vue 1. Data-Binding</h4>
+
+                            <div class="app-section">
+                                <div id="app">
+                                    {{ message }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <div class="white-box">
+                            <h4 class="text-muted vb">Vue 2. Hover: v-bind</h4>
+
+                            <div class="app-section">
+                                <div id="app-2">
+                                    <span v-bind:title="message">
+                                        Hover your mouse over me for a few seconds
+                                        to see my dynamically bound title!
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <div class="white-box">
+                            <h4 class="text-muted vb">Vue 3. Conditional: v-if, v-on:click</h4>
+
+                            <div class="app-section">
+                                <div id="app-3">
+                                    <button v-on:click="toggle" class="btn btn-info">Toggle Seen</button>
+                                    <p v-if="seen">Now you see me</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <div class="white-box">
+                            <h4 class="text-muted vb">Vue 4. Loop Renderer: v-for</h4>
+
+                            <div class="app-section">
+
+                                <div id="app-4">
+                                    <ol>
+                                        <li v-for="todo in todos">
+                                            {{ todo.text }}
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <div class="white-box">
+                            <h4 class="text-muted vb">Vue 5. Click Reverse</h4>
+
+                            <div class="app-section">
+                                <div id="app-5">
+                                    <button v-on:click="reverseMessage" class="btn btn-default">Reverse Message</button>
+                                    <p>{{ message }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <div class="white-box">
+                            <h4 class="text-muted vb">Vue 6. Two-Way Data-Binding: v-model</h4>
+
+                            <div class="app-section">
+
+                                <div id="app-6">
+                                    <input v-model="message">
+                                    <p>{{ message }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <div class="white-box">
+                            <h4 class="text-muted vb">Vue 7. Loop Rendering</h4>
+
+                            <div class="app-section">
+                                <div id="app-7">
+                                    <ol>
+                                        <!--
+      Now we provide each todo-item with the todo object
+      it's representing, so that its content can be dynamic.
+      We also need to provide each component with a "key",
+      which will be explained later.
+    -->
+                                        <todo-item v-for="item in groceryList" v-bind:todo="item" v-bind:key="item.id">
+                                        </todo-item>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <div class="white-box">
+                            <h4 class="text-muted vb">Vue 8. Instance 1 Component</h4>
+
+                            <div class="app-section">
+                                <div id="instance1">
+                                    <my-component></my-component>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <div class="white-box">
+                            <h4 class="text-muted vb">Vue 9. Instance with Props Component</h4>
+
+                            <div class="app-section">
+                                <div id="withProps">
+                                    <child message="hello world!"></child>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <div class="white-box">
+                            <h4 class="text-muted vb">Vue 10. Vue Router with Transition</h4>
+
+                            <div class="app-section">
+
+                                <!-- router app -->
+                                <div id="routerApp">
+                                    <p>
+                                        <!-- use router-link component for navigation. -->
+                                        <!-- specify the link by passing the `to` prop. -->
+                                        <!-- `<router-link>` will be rendered as an `<a>` tag by default -->
+                                        <router-link to="/foo" class="btn btn-primary">Foo</router-link>
+                                        <router-link to="/bar" class="btn btn-warning">Bar</router-link>
+                                        <router-link to="/other" class="btn btn-danger">Other</router-link>
+                                    </p>
+                                    <!-- route outlet -->
+                                    <!-- component matched by the route will render here -->
+                                    <transition name="fade">
+                                        <router-view></router-view>
+                                    </transition>
+                                </div>
+                                <!-- ./router app -->
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+                <!-- /.row -->
+
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /#page-wrapper -->
+    </div>
+
+
+
+
+
+    <!-- includes -->
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://unpkg.com/vue@2.4.2"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+
+
+
+    <script src="app1.js"></script>
+    <script src="app2.js"></script>
+    <script src="app3.js"></script>
+    <script src="app4.js"></script>
+    <script src="app5.js"></script>
+    <script src="app6.js"></script>
+
+    <!-- vue component -->
+    <script src="vueComponent1.js"></script>
+    <script src="vueInstance1.js"></script>
+    <script src="vueWithProps.js"></script>
+
+    <!-- vue router -->
+    <script src="vueRouterApp.js"></script>
+</body>
+
+</html>
