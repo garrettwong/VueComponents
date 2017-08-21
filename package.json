@@ -10,7 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "font-awesome": "^4.7.0"
+    "font-awesome": "^4.7.0",
+    "sortablejs": "^1.6.0"
   },
   "devDependencies": {
     "lite-server": "^2.3.0"
